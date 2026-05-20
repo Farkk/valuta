@@ -1,0 +1,128 @@
+.news-card {
+  &__link {
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    gap: rem(20);
+    width: 100%;
+    min-width: 0;
+
+    color: inherit;
+    text-decoration: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: rem(2) solid var(--color-brand);
+      outline-offset: rem(2);
+    }
+  }
+
+  &__media {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  &__image {
+    display: block;
+    width: rem(144);
+    height: rem(81);
+    border-radius: 15px;
+    object-fit: cover;
+  }
+
+  &__body {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    padding-top: rem(8);
+  }
+
+  &__title {
+    margin: 0 0 rem(8);
+
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-medium);
+    font-size: rem(16);
+    line-height: 1;
+    color: var(--color-ink);
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+  }
+
+  &__date {
+    margin: 0 rem(12) 0 0;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: rem(15);
+    color: var(--color-brand);
+  }
+
+  &__views {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(6);
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: rem(15);
+    color: var(--color-icon-muted);
+  }
+
+  &__views-icon {
+    display: flex;
+    flex-shrink: 0;
+    color: var(--color-icon-muted);
+
+    svg {
+      display: block;
+      width: rem(18);
+      height: rem(11);
+    }
+  }
+
+  &__views-count {
+    line-height: 1;
+  }
+
+  @media (max-width: 568px) {
+    &__link {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    &__media {
+      margin-bottom: rem(14);
+    }
+
+    &__image {
+      width: 100%;
+      max-width: rem(362);
+      height: rem(203);
+      border-radius: 15px;
+    }
+
+    &__body {
+      padding-top: 0;
+    }
+
+    &__title {
+      margin-bottom: rem(8);
+      font-weight: 500;
+      font-size: rem(16);
+      line-height: 1.25;
+      color: #22284b;
+    }
+  }
+}

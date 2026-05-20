@@ -1,0 +1,34 @@
+import domReady from './modules/dom-ready';
+import initFocusVisible from './modules/focus-visible';
+import initModalCity from './components/modal-city';
+import initCurrencySelect from './components/currency-select';
+import initFaqAccordion from './components/faq-accordion';
+import initBanksList from './components/banks-list';
+import initBankModals from './components/bank-modals';
+import initSidebarConverter from './components/sidebar-converter';
+import initMapFiltersModal from './components/map-filters-modal';
+import initReviewsCards from './components/reviews-cards';
+import initReviewsSlider from './components/reviews-slider';
+import initNewsPreviewSlider from './components/news-preview-slider';
+import initReviewsArchive from './components/reviews-archive';
+import initContentArchive from './components/content-archive';
+import initNewsShare from './components/news-share';
+import initHeaderMenu from './components/header-menu';
+
+domReady(() => {
+  initFocusVisible();
+  initModalCity();
+  initCurrencySelect();
+  initFaqAccordion();
+  initBanksList();
+  initBankModals();
+  initSidebarConverter();
+  initMapFiltersModal();
+  initReviewsCards();
+  initReviewsSlider();
+  initNewsPreviewSlider();
+  initReviewsArchive();
+  initContentArchive();
+  initNewsShare();
+  initHeaderMenu();
+});

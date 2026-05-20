@@ -1,0 +1,46 @@
+.site-footer {
+  background: #22284b;
+  padding-block: rem(26);
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(16);
+  }
+
+  &__logo {
+    display: inline-block;
+    line-height: 0;
+
+    img {
+      display: block;
+      width: rem(217);
+      height: rem(31);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-inverse);
+      outline-offset: rem(2);
+    }
+  }
+
+  &__nav {
+    line-height: 1;
+  }
+
+  &__link {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: rem(14);
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #fff;
+
+    &:focus-visible {
+      outline: 2px solid var(--color-inverse);
+      outline-offset: rem(2);
+    }
+  }
+}

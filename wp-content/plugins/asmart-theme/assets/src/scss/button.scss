@@ -1,0 +1,187 @@
+// ============================================
+// BUTTON COMPONENT STYLES
+// ============================================
+
+@use '_variables' as *;
+
+.asmart-button {
+  // Базовые стили
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-200);
+
+  // Отступы используют новую систему
+  padding: var(--spacing-200) var(--spacing-400);
+
+  // Типография
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  // Границы
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+
+  // Интерактив
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+
+  // Focus для accessibility
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  // ============================================
+  // Primary Variant
+  // ============================================
+  &--primary {
+    color: #ffffff;
+    background-color: var(--color-primary-500);
+    border-color: var(--color-primary-500);
+
+    &:hover:not(:disabled):not(.asmart-button--disabled) {
+      background-color: var(--color-primary-600);
+      border-color: var(--color-primary-600);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    &:active:not(:disabled):not(.asmart-button--disabled) {
+      background-color: var(--color-primary-700);
+      border-color: var(--color-primary-700);
+      transform: translateY(0);
+    }
+  }
+
+  // ============================================
+  // Secondary Variant
+  // ============================================
+  &--secondary {
+    color: #ffffff;
+    background-color: var(--color-secondary-500);
+    border-color: var(--color-secondary-500);
+
+    &:hover:not(:disabled):not(.asmart-button--disabled) {
+      background-color: var(--color-secondary-600);
+      border-color: var(--color-secondary-600);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    &:active:not(:disabled):not(.asmart-button--disabled) {
+      background-color: var(--color-secondary-700);
+      border-color: var(--color-secondary-700);
+      transform: translateY(0);
+    }
+  }
+
+  // ============================================
+  // Danger Variant
+  // ============================================
+  &--danger {
+    color: #ffffff;
+    background-color: var(--color-danger-500);
+    border-color: var(--color-danger-500);
+
+    &:hover:not(:disabled):not(.asmart-button--disabled) {
+      background-color: var(--color-danger-600);
+      border-color: var(--color-danger-600);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    &:active:not(:disabled):not(.asmart-button--disabled) {
+      background-color: var(--color-danger-700);
+      border-color: var(--color-danger-700);
+      transform: translateY(0);
+    }
+  }
+
+  // ============================================
+  // Ghost Variant (прозрачная с границей)
+  // ============================================
+  &--ghost {
+    color: var(--color-primary-500);
+    background-color: transparent;
+    border-color: var(--color-primary-500);
+
+    &:hover:not(:disabled):not(.asmart-button--disabled) {
+      color: #ffffff;
+      background-color: var(--color-primary-500);
+      transform: translateY(-1px);
+    }
+
+    &:active:not(:disabled):not(.asmart-button--disabled) {
+      background-color: var(--color-primary-600);
+      border-color: var(--color-primary-600);
+      transform: translateY(0);
+    }
+  }
+
+  // ============================================
+  // Link Variant (как текстовая ссылка)
+  // ============================================
+  &--link {
+    color: var(--color-primary-500);
+    background-color: transparent;
+    border-color: transparent;
+    text-decoration: underline;
+    padding: var(--spacing-100) var(--spacing-200);
+
+    &:hover:not(:disabled):not(.asmart-button--disabled) {
+      color: var(--color-primary-600);
+      text-decoration: none;
+    }
+
+    &:active:not(:disabled):not(.asmart-button--disabled) {
+      color: var(--color-primary-700);
+    }
+  }
+
+  // ============================================
+  // Disabled State
+  // ============================================
+  &:disabled,
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // ============================================
+  // With Icon
+  // ============================================
+  &--with-icon {
+    .asmart-button__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 1em;
+        height: 1em;
+        fill: currentColor;
+      }
+    }
+  }
+
+  // ============================================
+  // Link as Button (тег <a>)
+  // ============================================
+  &[href] {
+    display: inline-flex;
+
+    &[aria-disabled='true'] {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+}

@@ -1,0 +1,158 @@
+.other-currencies {
+  margin-block: rem(50) 0;
+
+  &__inner {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: rem(944);
+  }
+
+  &__title {
+    margin: 0 0 rem(38);
+
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-medium);
+    font-size: rem(33);
+    line-height: 1.1;
+    color: var(--color-ink);
+  }
+
+  &__title-accent {
+    color: var(--color-brand);
+  }
+
+  &__panel {
+    box-sizing: border-box;
+    padding: rem(23) rem(25) rem(28);
+
+    background: var(--color-surface);
+    border-radius: 15px;
+    box-shadow: 0 0 rem(20) 0 rgb(183 211 232 / 0.8);
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding-top: rem(14);
+    padding-bottom: rem(14);
+    border-bottom: 1px solid var(--color-border-divider);
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-medium);
+    font-size: rem(16);
+    line-height: 1.2;
+    color: var(--color-ink);
+    text-decoration: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      border-radius: rem(4);
+      outline: rem(2) solid var(--color-brand);
+      outline-offset: rem(2);
+    }
+  }
+
+  &__flag {
+    display: block;
+    flex-shrink: 0;
+    width: rem(30);
+    height: rem(30);
+    margin-right: rem(16);
+  }
+
+  &__label {
+    min-width: 0;
+  }
+
+  &__code {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-ink);
+  }
+
+  &__sep {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-ink);
+  }
+
+  &__name {
+    font-weight: 400;
+    color: var(--color-icon-muted);
+  }
+
+  &__action {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(14);
+  }
+
+  &__cta {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(246);
+    height: rem(40);
+    padding: 0 rem(12);
+
+    border-radius: 100px;
+
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-medium);
+    font-size: rem(14);
+    text-align: center;
+    color: var(--color-inverse);
+    text-decoration: none;
+
+    background: var(--color-ink);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: rem(2) solid var(--color-brand);
+      outline-offset: rem(2);
+    }
+  }
+
+  @media (max-width: 568px) {
+    margin-block: 35px;
+
+    &__title {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    &__panel {
+      padding: 20px;
+    }
+
+    &__cta {
+      max-width: 100%;
+      width: 100%;
+      height: 40px;
+    }
+  }
+}

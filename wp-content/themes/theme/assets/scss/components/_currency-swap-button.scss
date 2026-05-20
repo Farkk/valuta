@@ -1,0 +1,39 @@
+.currency-swap-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-inline: rem(18);
+  padding: 0;
+
+  color: var(--color-brand);
+
+  background: none;
+  border: 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: rem(2) solid var(--color-brand);
+    outline-offset: rem(2);
+    border-radius: rem(4);
+  }
+
+  svg {
+    display: block;
+    width: rem(15);
+    height: rem(18);
+  }
+
+  &--compact {
+    margin-inline: 0;
+
+    svg {
+      width: rem(18);
+      height: rem(15);
+    }
+  }
+}

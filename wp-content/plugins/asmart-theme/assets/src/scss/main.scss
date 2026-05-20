@@ -1,0 +1,256 @@
+// ============================================
+// ASMART UI COMPONENTS - MAIN STYLES
+// ============================================
+// Базовые стили и анимации для всех компонентов
+
+// --------------------------------------------
+// Reset & Base
+// --------------------------------------------
+.asmart-component {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.asmart-component *,
+.asmart-component *::before,
+.asmart-component *::after {
+  box-sizing: inherit;
+}
+
+// --------------------------------------------
+// Animations (красивые, но не перегруженные)
+// --------------------------------------------
+
+// Fade анимации
+@keyframes asmart-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes asmart-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+// Slide анимации
+@keyframes asmart-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes asmart-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Scale анимации
+@keyframes asmart-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes asmart-scale-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+// Shake анимация (для ошибок)
+@keyframes asmart-shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+// Pulse анимация (для loading)
+@keyframes asmart-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+// Spinner анимация
+@keyframes asmart-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+// --------------------------------------------
+// Utility Classes (анимации)
+// --------------------------------------------
+.asmart-animate-fade-in {
+  animation: asmart-fade-in var(--transition-base) ease-in-out;
+}
+
+.asmart-animate-fade-out {
+  animation: asmart-fade-out var(--transition-base) ease-in-out;
+}
+
+.asmart-animate-slide-down {
+  animation: asmart-slide-down var(--transition-base) ease-out;
+}
+
+.asmart-animate-slide-up {
+  animation: asmart-slide-up var(--transition-base) ease-out;
+}
+
+.asmart-animate-scale-in {
+  animation: asmart-scale-in var(--transition-fast) ease-out;
+}
+
+.asmart-animate-scale-out {
+  animation: asmart-scale-out var(--transition-fast) ease-in;
+}
+
+.asmart-animate-shake {
+  animation: asmart-shake 0.5s ease-in-out;
+}
+
+.asmart-animate-pulse {
+  animation: asmart-pulse 1.5s ease-in-out infinite;
+}
+
+.asmart-animate-spin {
+  animation: asmart-spin 1s linear infinite;
+}
+
+// --------------------------------------------
+// Focus Styles (Accessibility)
+// --------------------------------------------
+.asmart-component:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+// --------------------------------------------
+// Transitions (плавные переходы)
+// --------------------------------------------
+.asmart-transition-fast {
+  transition: all var(--transition-fast);
+}
+
+.asmart-transition-base {
+  transition: all var(--transition-base);
+}
+
+.asmart-transition-slow {
+  transition: all var(--transition-slow);
+}
+
+// --------------------------------------------
+// Shadow Utilities
+// --------------------------------------------
+.asmart-shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.asmart-shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.asmart-shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.asmart-shadow-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+// --------------------------------------------
+// Overlay (для модалок, дропдаунов)
+// --------------------------------------------
+.asmart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-modal);
+  animation: asmart-fade-in var(--transition-base) ease-in-out;
+  backdrop-filter: blur(2px);
+}
+
+.asmart-overlay.is-closing {
+  animation: asmart-fade-out var(--transition-base) ease-in-out;
+}
+
+// --------------------------------------------
+// Loading State
+// --------------------------------------------
+.asmart-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.asmart-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid var(--primary);
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: asmart-spin 0.6s linear infinite;
+}
+
+// --------------------------------------------
+// Disabled State
+// --------------------------------------------
+.asmart-disabled,
+[disabled].asmart-component {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+// --------------------------------------------
+// Screen Reader Only (Accessibility)
+// --------------------------------------------
+.asmart-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

@@ -1,0 +1,39 @@
+# Composer (composer.lock игнорируем, vendor/ коммитим)
+composer.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build (только dev зависимости)
+/node_modules/
+
+# Logs
+*.log
+
+# AI Assistant files
+.claude/
+.cursor/
+.aider*
+.copilot/
+
+# AI Chat context files
+*.ai.md
+*.context.md
+.ai-context/
+
+# AI code review files
+.ai-review/
+ai-*.txt
+
+# Documentation and Tasks
+/docs/
+/tasks/
+CLAUDE.md

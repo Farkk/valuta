@@ -1,0 +1,25 @@
+{
+  "name": "theme-starter",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "gulp watch",
+    "build": "gulp build",
+    "clean": "gulp clean"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "browser-sync": "^2.29.3",
+    "cssnano": "^5.1.15",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-esbuild": "^0.11.0",
+    "gulp-if": "^3.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.77.8",
+    "swiper": "^11.2.10"
+  }
+}

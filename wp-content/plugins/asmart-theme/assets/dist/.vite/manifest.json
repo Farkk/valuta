@@ -1,0 +1,39 @@
+{
+  "assets/src/js/modal.js": {
+    "file": "js/modal-js.DKOQoTil.js",
+    "name": "modal-js",
+    "src": "assets/src/js/modal.js",
+    "isEntry": true
+  },
+  "assets/src/js/pagination.js": {
+    "file": "js/pagination-js.BeJjz6yT.js",
+    "name": "pagination-js",
+    "src": "assets/src/js/pagination.js",
+    "isEntry": true
+  },
+  "assets/src/scss/button.scss": {
+    "file": "css/button.DvsESnhI.css",
+    "src": "assets/src/scss/button.scss",
+    "isEntry": true
+  },
+  "assets/src/scss/card.scss": {
+    "file": "css/card.DRPkJE7x.css",
+    "src": "assets/src/scss/card.scss",
+    "isEntry": true
+  },
+  "assets/src/scss/main.scss": {
+    "file": "css/main.BcCH2W8i.css",
+    "src": "assets/src/scss/main.scss",
+    "isEntry": true
+  },
+  "assets/src/scss/modal.scss": {
+    "file": "css/modal.CQtvyn_R.css",
+    "src": "assets/src/scss/modal.scss",
+    "isEntry": true
+  },
+  "assets/src/scss/pagination.scss": {
+    "file": "css/pagination.DrQ722T2.css",
+    "src": "assets/src/scss/pagination.scss",
+    "isEntry": true
+  }
+}

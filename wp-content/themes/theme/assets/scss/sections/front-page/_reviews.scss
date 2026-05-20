@@ -1,0 +1,328 @@
+@import 'swiper/swiper';
+
+.reviews {
+  margin-block: rem(50);
+
+  &__inner {
+    max-width: rem(944);
+    display: flex;
+    flex-direction: column;
+    gap: rem(32);
+    padding-bottom: rem(50);
+    border-bottom: 1px solid #caceda;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(16);
+  }
+
+  &__title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: rem(33);
+    color: #22284b;
+
+    span {
+      color: #e30611;
+    }
+  }
+
+  &__nav {
+    max-width: rem(66);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(6);
+
+    .prev {
+      transform: rotate(180deg);
+    }
+    .prev,
+    .next {
+      padding: 0;
+
+      &:disabled,
+      &.swiper-button-disabled {
+        opacity: 0.35;
+        cursor: default;
+      }
+
+      svg {
+        width: rem(30);
+        height: rem(30);
+      }
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+    width: 100%;
+    // Место для box-shadow карточек (иначе обрезается overflow: hidden у Swiper)
+    padding: rem(20);
+    margin: rem(-20);
+
+    &.swiper {
+      margin-left: rem(-20);
+      margin-right: rem(-20);
+    }
+
+    .swiper-wrapper {
+      align-items: stretch;
+      height: auto;
+    }
+
+    .swiper-slide {
+      height: auto;
+      box-sizing: border-box;
+    }
+  }
+
+  &__slide {
+    height: auto;
+  }
+
+  &__pagination {
+    display: none;
+    position: static;
+    align-items: center;
+    justify-content: center;
+    gap: rem(6);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transform: none;
+
+    &.swiper-pagination-horizontal {
+      bottom: auto;
+      left: auto;
+    }
+
+    .swiper-pagination-bullet {
+      width: rem(7);
+      height: rem(7);
+      margin: 0;
+      opacity: 1;
+      border-radius: 50%;
+      background: var(--color-border-divider);
+      transition: background-color 0.2s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: var(--color-brand);
+    }
+  }
+
+  &__all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    max-width: rem(246);
+    width: 100%;
+    height: rem(40);
+    background: #22284b;
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: rem(14);
+    text-align: center;
+    color: #fff;
+
+    margin: 0 auto;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(183, 211, 232, 0.8);
+    border-radius: 20px;
+    max-width: rem(459);
+    min-height: rem(246);
+    max-height: rem(246);
+    padding: rem(28) rem(25) rem(23) rem(25);
+
+    &-header {
+      margin-bottom: rem(20);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .person {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: rem(17);
+        color: #22284b;
+      }
+      .bank {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: rem(14);
+        color: #e30611;
+      }
+    }
+
+    &-body {
+      margin-bottom: rem(15);
+
+      p {
+        margin: 0 0 rem(8);
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: rem(14);
+        line-height: 1.23;
+        color: #606981;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .left {
+        display: flex;
+        max-width: rem(149);
+        width: 100%;
+        gap: rem(12);
+
+        .date {
+          font-family: var(--font-family);
+          font-weight: 500;
+          font-size: rem(14);
+          color: #22284b;
+        }
+        .city {
+          display: flex;
+          gap: rem(4);
+          align-self: center;
+          font-family: var(--font-family);
+          font-weight: 500;
+          font-size: rem(14);
+          color: #22284b;
+
+          svg {
+            flex-shrink: 0;
+          }
+        }
+      }
+
+      .right {
+        max-width: rem(105);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: rem(5);
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__card-read-more {
+    display: inline-flex;
+    align-items: center;
+    max-width: fit-content;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: rem(14);
+    color: #22284b;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.75;
+    }
+  }
+
+  &__empty {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: rem(16);
+    color: #606981;
+  }
+  @media (max-width: 568px) {
+    margin-block: 35px;
+
+    &__title {
+      font-size: 22px;
+    }
+
+    &__inner {
+      gap: 16px;
+    }
+
+    &__nav {
+      display: none;
+    }
+
+    &__pagination {
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .reviews {
+    &__header {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    &__nav {
+      margin-left: auto;
+    }
+  }
+}
+
+@media (min-width: 569px) and (max-width: 767px) {
+  .reviews {
+    &__card {
+      max-width: none;
+    }
+  }
+}
+
+@media (max-width: 568px) {
+  .reviews {
+    &__slider {
+      &.swiper {
+        margin: 0;
+        padding: 0;
+      }
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &__card {
+      width: 100%;
+      max-width: 100%;
+      margin-inline: auto;
+    }
+    &__all {
+      max-width: 100%;
+      width: 100%;
+      height: 40px;
+    }
+    &__inner {
+      padding-bottom: 35px;
+    }
+  }
+}

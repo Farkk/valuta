@@ -1,0 +1,26 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(rem(40), 5vw, rem(64));
+}
+
+h2 {
+  font-size: clamp(rem(30), 4vw, rem(44));
+}
+
+h3 {
+  font-size: clamp(rem(22), 3vw, rem(28));
+}
+
+p {
+  color: var(--color-text-muted);
+}
+

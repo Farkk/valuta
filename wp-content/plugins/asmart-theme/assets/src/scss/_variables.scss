@@ -1,0 +1,304 @@
+// ============================================
+// UI COMPONENTS - SCSS VARIABLES & CSS CUSTOM PROPERTIES
+// ============================================
+
+// --------------------------------------------
+// Цветовая палитра (0-1000)
+// --------------------------------------------
+// Primary цвета
+$color-primary-0: #e6f2ff !default;
+$color-primary-100: #cce5ff !default;
+$color-primary-200: #99ccff !default;
+$color-primary-300: #66b2ff !default;
+$color-primary-400: #3399ff !default;
+$color-primary-500: #0080ff !default;
+$color-primary-600: #0066cc !default;
+$color-primary-700: #004d99 !default;
+$color-primary-800: #003366 !default;
+$color-primary-900: #001a33 !default;
+$color-primary-1000: #000d1a !default;
+
+// Secondary цвета
+$color-secondary-0: #f5f5f5 !default;
+$color-secondary-100: #eeeeee !default;
+$color-secondary-200: #e0e0e0 !default;
+$color-secondary-300: #bdbdbd !default;
+$color-secondary-400: #9e9e9e !default;
+$color-secondary-500: #757575 !default;
+$color-secondary-600: #616161 !default;
+$color-secondary-700: #424242 !default;
+$color-secondary-800: #303030 !default;
+$color-secondary-900: #212121 !default;
+$color-secondary-1000: #121212 !default;
+
+// Danger цвета
+$color-danger-0: #ffebee !default;
+$color-danger-100: #ffcdd2 !default;
+$color-danger-200: #ef9a9a !default;
+$color-danger-300: #e57373 !default;
+$color-danger-400: #ef5350 !default;
+$color-danger-500: #f44336 !default;
+$color-danger-600: #e53935 !default;
+$color-danger-700: #d32f2f !default;
+$color-danger-800: #c62828 !default;
+$color-danger-900: #b71c1c !default;
+$color-danger-1000: #8b0000 !default;
+
+// Success цвета
+$color-success-0: #e8f5e9 !default;
+$color-success-100: #c8e6c9 !default;
+$color-success-200: #a5d6a7 !default;
+$color-success-300: #81c784 !default;
+$color-success-400: #66bb6a !default;
+$color-success-500: #4caf50 !default;
+$color-success-600: #43a047 !default;
+$color-success-700: #388e3c !default;
+$color-success-800: #2e7d32 !default;
+$color-success-900: #1b5e20 !default;
+$color-success-1000: #0d3d10 !default;
+
+// Warning цвета
+$color-warning-0: #fff8e1 !default;
+$color-warning-100: #ffecb3 !default;
+$color-warning-200: #ffe082 !default;
+$color-warning-300: #ffd54f !default;
+$color-warning-400: #ffca28 !default;
+$color-warning-500: #ffc107 !default;
+$color-warning-600: #ffb300 !default;
+$color-warning-700: #ffa000 !default;
+$color-warning-800: #ff8f00 !default;
+$color-warning-900: #ff6f00 !default;
+$color-warning-1000: #e65100 !default;
+
+// Gray цвета
+$color-gray-0: #fafafa !default;
+$color-gray-100: #f5f5f5 !default;
+$color-gray-200: #eeeeee !default;
+$color-gray-300: #e0e0e0 !default;
+$color-gray-400: #bdbdbd !default;
+$color-gray-500: #9e9e9e !default;
+$color-gray-600: #757575 !default;
+$color-gray-700: #616161 !default;
+$color-gray-800: #424242 !default;
+$color-gray-900: #212121 !default;
+$color-gray-1000: #000000 !default;
+
+// --------------------------------------------
+// Отступы (Spacing Scale 0-1500)
+// --------------------------------------------
+$spacing-0: 0 !default;
+$spacing-50: 2px !default;
+$spacing-100: 4px !default;
+$spacing-150: 6px !default;
+$spacing-200: 8px !default;
+$spacing-250: 10px !default;
+$spacing-300: 12px !default;
+$spacing-350: 14px !default;
+$spacing-400: 16px !default;
+$spacing-450: 18px !default;
+$spacing-500: 20px !default;
+$spacing-550: 22px !default;
+$spacing-600: 24px !default;
+$spacing-650: 28px !default;
+$spacing-700: 32px !default;
+$spacing-750: 36px !default;
+$spacing-800: 40px !default;
+$spacing-850: 48px !default;
+$spacing-900: 56px !default;
+$spacing-950: 64px !default;
+$spacing-1000: 80px !default;
+$spacing-1100: 96px !default;
+$spacing-1200: 112px !default;
+$spacing-1300: 128px !default;
+$spacing-1400: 160px !default;
+$spacing-1500: 192px !default;
+
+// --------------------------------------------
+// Семантические токены
+// --------------------------------------------
+$primary: $color-primary-500 !default;
+$secondary: $color-secondary-500 !default;
+$danger: $color-danger-500 !default;
+$success: $color-success-500 !default;
+$warning: $color-warning-500 !default;
+
+$spacing-xs: $spacing-100 !default;
+$spacing-sm: $spacing-200 !default;
+$spacing-md: $spacing-400 !default;
+$spacing-lg: $spacing-600 !default;
+$spacing-xl: $spacing-800 !default;
+
+$radius-sm: 2px !default;
+$radius-md: 4px !default;
+$radius-lg: 8px !default;
+$radius-xl: 12px !default;
+$radius-full: 9999px !default;
+
+$font-family:
+  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+  Cantarell, sans-serif !default;
+$font-size-xs: 12px !default;
+$font-size-sm: 14px !default;
+$font-size-md: 16px !default;
+$font-size-lg: 18px !default;
+$font-size-xl: 20px !default;
+
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05) !default;
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1) !default;
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1) !default;
+$shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15) !default;
+
+$transition-fast: 150ms ease-in-out !default;
+$transition-base: 250ms ease-in-out !default;
+$transition-slow: 350ms ease-in-out !default;
+
+$z-dropdown: 1000 !default;
+$z-modal: 2000 !default;
+$z-tooltip: 3000 !default;
+$z-notification: 4000 !default;
+
+// --------------------------------------------
+// CSS Custom Properties Export
+// --------------------------------------------
+:root {
+  // Colors
+  --color-primary-0: #{$color-primary-0};
+  --color-primary-100: #{$color-primary-100};
+  --color-primary-200: #{$color-primary-200};
+  --color-primary-300: #{$color-primary-300};
+  --color-primary-400: #{$color-primary-400};
+  --color-primary-500: #{$color-primary-500};
+  --color-primary-600: #{$color-primary-600};
+  --color-primary-700: #{$color-primary-700};
+  --color-primary-800: #{$color-primary-800};
+  --color-primary-900: #{$color-primary-900};
+  --color-primary-1000: #{$color-primary-1000};
+
+  --color-secondary-0: #{$color-secondary-0};
+  --color-secondary-100: #{$color-secondary-100};
+  --color-secondary-200: #{$color-secondary-200};
+  --color-secondary-300: #{$color-secondary-300};
+  --color-secondary-400: #{$color-secondary-400};
+  --color-secondary-500: #{$color-secondary-500};
+  --color-secondary-600: #{$color-secondary-600};
+  --color-secondary-700: #{$color-secondary-700};
+  --color-secondary-800: #{$color-secondary-800};
+  --color-secondary-900: #{$color-secondary-900};
+  --color-secondary-1000: #{$color-secondary-1000};
+
+  --color-danger-0: #{$color-danger-0};
+  --color-danger-100: #{$color-danger-100};
+  --color-danger-200: #{$color-danger-200};
+  --color-danger-300: #{$color-danger-300};
+  --color-danger-400: #{$color-danger-400};
+  --color-danger-500: #{$color-danger-500};
+  --color-danger-600: #{$color-danger-600};
+  --color-danger-700: #{$color-danger-700};
+  --color-danger-800: #{$color-danger-800};
+  --color-danger-900: #{$color-danger-900};
+  --color-danger-1000: #{$color-danger-1000};
+
+  --color-success-0: #{$color-success-0};
+  --color-success-100: #{$color-success-100};
+  --color-success-200: #{$color-success-200};
+  --color-success-300: #{$color-success-300};
+  --color-success-400: #{$color-success-400};
+  --color-success-500: #{$color-success-500};
+  --color-success-600: #{$color-success-600};
+  --color-success-700: #{$color-success-700};
+  --color-success-800: #{$color-success-800};
+  --color-success-900: #{$color-success-900};
+  --color-success-1000: #{$color-success-1000};
+
+  --color-warning-0: #{$color-warning-0};
+  --color-warning-100: #{$color-warning-100};
+  --color-warning-200: #{$color-warning-200};
+  --color-warning-300: #{$color-warning-300};
+  --color-warning-400: #{$color-warning-400};
+  --color-warning-500: #{$color-warning-500};
+  --color-warning-600: #{$color-warning-600};
+  --color-warning-700: #{$color-warning-700};
+  --color-warning-800: #{$color-warning-800};
+  --color-warning-900: #{$color-warning-900};
+  --color-warning-1000: #{$color-warning-1000};
+
+  --color-gray-0: #{$color-gray-0};
+  --color-gray-100: #{$color-gray-100};
+  --color-gray-200: #{$color-gray-200};
+  --color-gray-300: #{$color-gray-300};
+  --color-gray-400: #{$color-gray-400};
+  --color-gray-500: #{$color-gray-500};
+  --color-gray-600: #{$color-gray-600};
+  --color-gray-700: #{$color-gray-700};
+  --color-gray-800: #{$color-gray-800};
+  --color-gray-900: #{$color-gray-900};
+  --color-gray-1000: #{$color-gray-1000};
+
+  // Spacing
+  --spacing-0: #{$spacing-0};
+  --spacing-50: #{$spacing-50};
+  --spacing-100: #{$spacing-100};
+  --spacing-150: #{$spacing-150};
+  --spacing-200: #{$spacing-200};
+  --spacing-250: #{$spacing-250};
+  --spacing-300: #{$spacing-300};
+  --spacing-350: #{$spacing-350};
+  --spacing-400: #{$spacing-400};
+  --spacing-450: #{$spacing-450};
+  --spacing-500: #{$spacing-500};
+  --spacing-550: #{$spacing-550};
+  --spacing-600: #{$spacing-600};
+  --spacing-650: #{$spacing-650};
+  --spacing-700: #{$spacing-700};
+  --spacing-750: #{$spacing-750};
+  --spacing-800: #{$spacing-800};
+  --spacing-850: #{$spacing-850};
+  --spacing-900: #{$spacing-900};
+  --spacing-950: #{$spacing-950};
+  --spacing-1000: #{$spacing-1000};
+  --spacing-1100: #{$spacing-1100};
+  --spacing-1200: #{$spacing-1200};
+  --spacing-1300: #{$spacing-1300};
+  --spacing-1400: #{$spacing-1400};
+  --spacing-1500: #{$spacing-1500};
+
+  // Semantic tokens
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --danger: #{$danger};
+  --success: #{$success};
+  --warning: #{$warning};
+
+  --spacing-xs: #{$spacing-xs};
+  --spacing-sm: #{$spacing-sm};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+  --spacing-xl: #{$spacing-xl};
+
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --radius-full: #{$radius-full};
+
+  --font-family: #{$font-family};
+  --font-size-xs: #{$font-size-xs};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-md: #{$font-size-md};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-xl: #{$shadow-xl};
+
+  --transition-fast: #{$transition-fast};
+  --transition-base: #{$transition-base};
+  --transition-slow: #{$transition-slow};
+
+  --z-dropdown: #{$z-dropdown};
+  --z-modal: #{$z-modal};
+  --z-tooltip: #{$z-tooltip};
+  --z-notification: #{$z-notification};
+}

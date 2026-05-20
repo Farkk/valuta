@@ -1,0 +1,238 @@
+// ============================================
+// MODAL COMPONENT STYLES
+// ============================================
+
+@use '_variables' as *;
+
+.asmart-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-modal);
+  display: none;
+
+  // ============================================
+  // Open State
+  // ============================================
+  &.is-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // ============================================
+  // Overlay (фон затемнения)
+  // ============================================
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+    animation: asmart-fade-in var(--transition-base) ease-out;
+  }
+
+  // ============================================
+  // Container (обертка контента)
+  // ============================================
+  &__container {
+    position: relative;
+    z-index: 1;
+    max-height: 90vh;
+    overflow: hidden;
+    animation: asmart-modal-scale-in var(--transition-base) ease-out;
+  }
+
+  // Анимация появления модалки
+  @keyframes asmart-modal-scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  // ============================================
+  // Content (основной контент)
+  // ============================================
+  &__content {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+  }
+
+  // ============================================
+  // Header
+  // ============================================
+  &__header {
+    padding: var(--spacing-600);
+    border-bottom: 1px solid var(--color-gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-gray-900);
+  }
+
+  // ============================================
+  // Close Button
+  // ============================================
+  &__close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    padding: var(--spacing-100);
+    color: var(--color-gray-600);
+    transition: all var(--transition-fast);
+    border-radius: var(--radius-sm);
+
+    &:hover {
+      color: var(--color-gray-900);
+      background-color: var(--color-gray-100);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  // ============================================
+  // Body
+  // ============================================
+  &__body {
+    padding: var(--spacing-600);
+    overflow-y: auto;
+    flex: 1;
+
+    // Кастомный скроллбар
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--color-gray-100);
+      border-radius: var(--radius-sm);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-gray-400);
+      border-radius: var(--radius-sm);
+
+      &:hover {
+        background: var(--color-gray-500);
+      }
+    }
+  }
+
+  // ============================================
+  // Footer
+  // ============================================
+  &__footer {
+    padding: var(--spacing-600);
+    border-top: 1px solid var(--color-gray-200);
+    display: flex;
+    gap: var(--spacing-200);
+    justify-content: flex-end;
+    flex-shrink: 0;
+  }
+
+  // ============================================
+  // Size Variants
+  // ============================================
+  &--small &__content {
+    width: 400px;
+    max-width: 90vw;
+  }
+
+  &--medium &__content {
+    width: 600px;
+    max-width: 90vw;
+  }
+
+  &--large &__content {
+    width: 900px;
+    max-width: 90vw;
+  }
+
+  &--fullscreen &__content {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  // ============================================
+  // Icon (для success/error модалок)
+  // ============================================
+  &__icon {
+    width: 64px;
+    height: 64px;
+    margin: var(--spacing-600) auto 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: asmart-scale-in var(--transition-base) ease-out;
+    animation-delay: 0.1s;
+    animation-fill-mode: backwards;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    &--success {
+      background-color: var(--color-success-100);
+      color: var(--color-success-600);
+    }
+
+    &--error {
+      background-color: var(--color-danger-100);
+      color: var(--color-danger-600);
+    }
+  }
+
+  // ============================================
+  // Form Variant
+  // ============================================
+  &--form &__form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  // ============================================
+  // Responsive (мобильные устройства)
+  // ============================================
+  @media (max-width: 768px) {
+    &__content {
+      width: 95vw !important;
+      max-height: 95vh;
+    }
+
+    &__header,
+    &__body,
+    &__footer {
+      padding: var(--spacing-400);
+    }
+  }
+}

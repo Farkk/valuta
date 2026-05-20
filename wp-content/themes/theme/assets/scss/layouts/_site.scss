@@ -1,0 +1,7 @@
+.site-main {
+  padding-block: rem(78) rem(98);
+
+  @media (max-width: 568px) {
+    padding-block: 20px 0;
+  }
+}

@@ -1,0 +1,72 @@
+/* ../fonts/ — рядом с dist/css, копируется из assets/fonts в gulp */
+@font-face {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/Ubuntu-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Ubuntu-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/Ubuntu-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/Ubuntu-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/Lato-Bold.ttf') format('truetype');
+}

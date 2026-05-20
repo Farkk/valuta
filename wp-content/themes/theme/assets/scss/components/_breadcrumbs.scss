@@ -1,0 +1,33 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: rem(10);
+  margin: 0 0 rem(24);
+
+  &__item,
+  &__separator {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: rem(13);
+    line-height: 1.2;
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  &__item {
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--color-brand);
+    }
+
+    &--current {
+      pointer-events: none;
+    }
+  }
+
+  &__separator {
+    color: var(--color-icon-muted);
+  }
+}

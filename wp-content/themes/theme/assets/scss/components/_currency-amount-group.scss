@@ -1,0 +1,54 @@
+.currency-amount-group {
+  display: flex;
+  align-items: stretch;
+  width: rem(264);
+  height: rem(50);
+  box-sizing: border-box;
+
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+
+  &__input {
+    box-sizing: border-box;
+    flex: 0 1 rem(155);
+    max-width: rem(155);
+    min-width: 0;
+    min-height: 0;
+    align-self: stretch;
+
+    padding-inline: rem(14);
+
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-medium);
+    font-size: rem(17);
+    line-height: 1.2;
+    color: var(--color-ink);
+
+    background: var(--color-background);
+    border: 0;
+    border-radius: var(--radius-pill) 0 0 var(--radius-pill);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      box-shadow: inset 0 0 0 rem(2) var(--color-brand);
+    }
+
+    &::placeholder {
+      color: rgb(81 85 125 / 0.6);
+    }
+  }
+
+  &__select {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: rem(110);
+    display: flex;
+
+    .currency-select--layout-embedded {
+      max-width: 100%;
+    }
+  }
+}

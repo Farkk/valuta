@@ -1,0 +1,36 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  min-height: rem(36);
+  padding: 0;
+
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: rem(15);
+  text-align: center;
+  color: var(--color-inverse);
+}
+.btn-cities {
+  min-width: rem(155);
+  width: 100%;
+  min-height: rem(36);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(6);
+  padding-inline: 15px;
+
+  background: var(--color-ink);
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: rem(15);
+  color: var(--color-inverse);
+}

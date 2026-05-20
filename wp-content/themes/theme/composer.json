@@ -1,0 +1,19 @@
+{
+  "name": "theme/starter",
+  "description": "Production-ready WordPress starter theme with modern architecture.",
+  "type": "wordpress-theme",
+  "license": "proprietary",
+  "require": {
+    "php": "^8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Theme\\": "inc/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}
+

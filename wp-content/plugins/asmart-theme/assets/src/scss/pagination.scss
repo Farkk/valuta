@@ -1,0 +1,251 @@
+// ============================================
+// PAGINATION COMPONENT STYLES
+// ============================================
+
+@use '_variables' as *;
+
+.asmart-pagination {
+  display: flex;
+  justify-content: center;
+  margin: var(--spacing-600) 0;
+
+  // ============================================
+  // List
+  // ============================================
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-100);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  // ============================================
+  // Item
+  // ============================================
+  &__item {
+    margin: 0;
+
+    &--ellipsis {
+      pointer-events: none;
+    }
+  }
+
+  // ============================================
+  // Link
+  // ============================================
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: var(--spacing-200);
+    font-family: var(--font-family);
+    font-size: var(--font-size-md);
+    color: var(--color-primary-500);
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+
+    // Hover state
+    &:hover:not(&--active) {
+      background-color: var(--color-primary-50);
+      border-color: var(--color-primary-500);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    // Focus state (accessibility)
+    &:focus-visible {
+      outline: 2px solid var(--color-primary-500);
+      outline-offset: 2px;
+    }
+
+    // Active state (текущая страница)
+    &--active {
+      color: #ffffff;
+      background-color: var(--color-primary-500);
+      border-color: var(--color-primary-500);
+      cursor: default;
+      font-weight: 600;
+      box-shadow: var(--shadow-md);
+
+      &:hover {
+        transform: none;
+      }
+    }
+  }
+
+  // ============================================
+  // Ellipsis (...)
+  // ============================================
+  &__ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: var(--spacing-200);
+    color: var(--color-gray-600);
+  }
+
+  // ============================================
+  // AJAX Pagination
+  // ============================================
+  &--ajax {
+    position: relative;
+
+    .asmart-pagination__link--ajax {
+      background: none;
+      border: 1px solid var(--color-gray-300);
+      font: inherit;
+      padding: var(--spacing-200);
+    }
+  }
+
+  // ============================================
+  // Load More Pagination
+  // ============================================
+  &--load-more {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-300);
+  }
+
+  &__load-more-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-200);
+    padding: var(--spacing-300) var(--spacing-500);
+    font-family: var(--font-family);
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    color: #ffffff;
+    background-color: var(--color-primary-500);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+
+    &:hover {
+      background-color: var(--color-primary-600);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary-500);
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+  }
+
+  &__counter {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+  }
+
+  // ============================================
+  // Infinite Scroll
+  // ============================================
+  &--infinite {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__infinite-trigger {
+    height: 1px;
+    visibility: hidden;
+  }
+
+  &__infinite-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-200);
+    padding: var(--spacing-400);
+  }
+
+  &__infinite-end {
+    padding: var(--spacing-400);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    text-align: center;
+  }
+
+  // ============================================
+  // Loader / Spinner
+  // ============================================
+  &__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-300);
+  }
+
+  &__spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-gray-300);
+    border-top-color: var(--color-primary-500);
+    border-radius: 50%;
+    animation: asmart-spinner-rotate 0.8s linear infinite;
+  }
+
+  &__loading-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+  }
+
+  // ============================================
+  // Responsive (мобильные устройства)
+  // ============================================
+  @media (max-width: 768px) {
+    &__link {
+      min-width: 36px;
+      height: 36px;
+      font-size: var(--font-size-sm);
+      padding: var(--spacing-150);
+    }
+
+    &__ellipsis {
+      min-width: 36px;
+      height: 36px;
+    }
+
+    &__list {
+      gap: var(--spacing-50);
+    }
+
+    &__load-more-btn {
+      padding: var(--spacing-250) var(--spacing-400);
+      font-size: var(--font-size-sm);
+    }
+  }
+}
+
+// ============================================
+// Keyframes
+// ============================================
+@keyframes asmart-spinner-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
