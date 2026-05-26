@@ -15,6 +15,7 @@ use Theme\Content\ContentRegistrar;
 use Theme\Content\ContentTypeRouter;
 use Theme\Core\Contracts\ServiceProvider;
 use Theme\Currencies\CurrencyRouter;
+use Theme\SEO\SeoAdminService;
 use Theme\SEO\SeoManager;
 use Theme\SEO\SeoRouter;
 use Theme\Setup\ThemeSetup;
@@ -31,6 +32,7 @@ final class Application
         ContentRegistrar::class,
         ContentTypeRouter::class,
         SeoManager::class,
+        SeoAdminService::class,
         AcfManager::class,
         RegistryFields::class,
         AboutPageFields::class,

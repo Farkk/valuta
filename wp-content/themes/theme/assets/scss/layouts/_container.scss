@@ -5,9 +5,3 @@
   padding-inline: var(--container-padding);
   margin-inline: auto;
 }
-
-@media (max-width: 480px) {
-  .container {
-    padding-inline: var(--container-padding-sm);
-  }
-}

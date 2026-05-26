@@ -7,6 +7,11 @@ namespace Theme\Currencies;
 final class CurrencyApiClient
 {
     private const BASE_URL = 'https://data.kkb-tech.ru';
+
+    public static function getBaseUrl(): string
+    {
+        return self::BASE_URL;
+    }
     private const TOKEN = 'kFYqSwq9RDjFtAVbq5iPb0kyO3OTWmmKG1x2W9aiBN8YZztRh3y4k3pITU6rI3td';
     private const SOURCE = 'Banki.ru';
 

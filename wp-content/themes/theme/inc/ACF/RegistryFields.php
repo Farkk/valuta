@@ -98,18 +98,9 @@ final class RegistryFields implements ServiceProvider
                     'layout' => 'table',
                     'button_label' => 'Добавить банк',
                     'sub_fields' => [
-                        ['key' => 'field_theme_bank_code', 'label' => 'Код', 'name' => 'bank_code', 'type' => 'text', 'wrapper' => ['width' => '20']],
-                        ['key' => 'field_theme_bank_name', 'label' => 'Название', 'name' => 'bank_name', 'type' => 'text', 'wrapper' => ['width' => '30']],
-                        [
-                            'key' => 'field_theme_bank_logo',
-                            'label' => 'Логотип',
-                            'name' => 'bank_logo',
-                            'type' => 'image',
-                            'return_format' => 'url',
-                            'preview_size' => 'thumbnail',
-                            'wrapper' => ['width' => '25'],
-                        ],
-                        ['key' => 'field_theme_bank_url', 'label' => 'Ссылка на банк', 'name' => 'bank_url', 'type' => 'url', 'wrapper' => ['width' => '25']],
+                        ['key' => 'field_theme_bank_code', 'label' => 'Код', 'name' => 'bank_code', 'type' => 'text', 'wrapper' => ['width' => '25']],
+                        ['key' => 'field_theme_bank_name', 'label' => 'Название', 'name' => 'bank_name', 'type' => 'text', 'wrapper' => ['width' => '35']],
+                        ['key' => 'field_theme_bank_url', 'label' => 'Ссылка на банк', 'name' => 'bank_url', 'type' => 'url', 'wrapper' => ['width' => '40']],
                         [
                             'key' => 'field_theme_bank_description',
                             'label' => 'Описание',

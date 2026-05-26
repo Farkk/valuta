@@ -85,7 +85,9 @@ foreach ($sidebarConverterFromOptions as $index => $currency) {
 $sidebarConverterToOptions = [
   CurrencyManager::formatCurrency('RUB'),
 ];
-$sidebarRatesResponse = RatesManager::getRates((string) $currentCity['city_name'], 'usd');
+$sidebarRatesResponse = $currentCurrency === 'usd'
+  ? $rates
+  : RatesManager::getRates((string) $currentCity['city_name'], 'usd');
 $sidebarCbrRates = [];
 foreach (($sidebarRatesResponse['cbr_rates']['today'] ?? []) as $code => $rate) {
   if (is_numeric($rate)) {

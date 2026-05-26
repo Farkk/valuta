@@ -34,26 +34,29 @@
     .tabs {
       justify-content: center;
       &__item {
-        font-size: rem(15);
+        font-size: rem(13);
 
         &.active {
-          font-size: rem(15);
+          font-size: rem(13);
         }
       }
     }
 
     .currency-swap-button {
-      margin-inline: rem(10);
+      margin-inline: rem(6);
     }
 
     .currency-amount-group {
-      width: rem(210);
+      width: rem(194);
       height: rem(46);
 
       .currency-amount-group__input {
-        flex: 0 1 rem(116);
-        max-width: rem(116);
+        flex: 0 1 rem(96);
+        max-width: rem(96)
       }
+    }
+    .currency-amount-group__select {
+      max-width: rem(96);
     }
     .currency-select--layout-standalone {
       width: rem(94);

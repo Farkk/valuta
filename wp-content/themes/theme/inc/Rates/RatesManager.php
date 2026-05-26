@@ -53,7 +53,9 @@ final class RatesManager
         }
 
         if (! empty($rates['cities'][0]['banks']) && is_array($rates['cities'][0]['banks'])) {
-            BankRegistry::syncFromApi($rates['cities'][0]['banks']);
+            $rawBanks = $rates['cities'][0]['banks'];
+            BankRegistry::syncFromApi($rawBanks);
+            BankRegistry::updateLogosFromApi($rawBanks);
         }
 
         if ($useCache) {
@@ -74,6 +76,8 @@ final class RatesManager
     {
         $kkbReferenceRate = self::getKkbReferenceRate($rawBanks, $tab);
         $offices = [];
+        /** @var array<string, array{bank_name: string, bank_logo: string, bank_url: string}> $bankMeta */
+        $bankMeta = [];
 
         foreach ($rawBanks as $bank) {
             if (! is_array($bank)) {
@@ -84,6 +88,14 @@ final class RatesManager
 
             if ($filters !== [] && $bankCode !== self::KKB_BANK_CODE) {
                 continue;
+            }
+
+            if ($bankCode !== '' && ! isset($bankMeta[$bankCode])) {
+                $bankMeta[$bankCode] = [
+                    'bank_name' => (string) ($bank['bank_name'] ?? ''),
+                    'bank_logo' => BankRegistry::getBankLogo($bankCode, (string) ($bank['bank_logo'] ?? '')),
+                    'bank_url'  => BankRegistry::getBankUrl($bankCode),
+                ];
             }
 
             foreach (($bank['offices'] ?? []) as $office) {
@@ -113,11 +125,17 @@ final class RatesManager
                     }
                 }
 
-                $offices[] = [
-                    'bank_code' => $bankCode,
+                $meta = $bankMeta[$bankCode] ?? [
                     'bank_name' => (string) ($bank['bank_name'] ?? ''),
                     'bank_logo' => BankRegistry::getBankLogo($bankCode, (string) ($bank['bank_logo'] ?? '')),
                     'bank_url'  => BankRegistry::getBankUrl($bankCode),
+                ];
+
+                $offices[] = [
+                    'bank_code' => $bankCode,
+                    'bank_name' => $meta['bank_name'],
+                    'bank_logo' => $meta['bank_logo'],
+                    'bank_url'  => $meta['bank_url'],
                     'latitude'  => (float) $office['latitude'],
                     'longitude' => (float) $office['longitude'],
                     'address'   => (string) ($office['address'] ?? ''),

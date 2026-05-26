@@ -387,6 +387,13 @@ body.is-header-menu-open {
   }
 }
 
+@media (max-width: 568px) {
+  .btn-cities.header__city {
+    min-width: rem(139);
+    max-width: rem(139);
+  }
+}
+
 @media (max-width: 359px) {
   .header {
     &__inner {

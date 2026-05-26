@@ -48,6 +48,7 @@ final class About
     public static function getPartners(): array
     {
         $partners = [];
+        $logoMap = BankRegistry::getLogoMap();
 
         foreach (BankRegistry::getMap() as $code => $bank) {
             $name = trim((string) ($bank['name'] ?? ''));
@@ -56,10 +57,12 @@ final class About
                 continue;
             }
 
+            $logo = (string) ($logoMap[$code] ?? '');
+
             $partners[] = [
                 'code' => (string) $code,
                 'name' => $name,
-                'logo' => BankRegistry::getBankLogo((string) $code),
+                'logo' => $logo !== '' ? $logo : BankRegistry::getBankLogo((string) $code),
                 'url'  => trim((string) ($bank['url'] ?? '')),
             ];
         }

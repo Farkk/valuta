@@ -284,4 +284,85 @@ final class SeoPageManager
     {
         return self::hasCurrentPage() ? self::getCurrentValue('title', $title) : $title;
     }
+
+    /**
+     * @param array{type?: string, query?: string, url?: string, title?: string, description?: string, h1?: string, h2?: string, seo_text?: string, h2_bottom?: string} $row
+     * @return array{status: string, message?: string, post_id?: int, url?: string}
+     */
+    public static function upsertFromImportRow(array $row, string $batchId = ''): array
+    {
+        $type = SeoTemplateRenderer::normalizeType((string) ($row['type'] ?? ''));
+        $url = self::normalizeUrl((string) ($row['url'] ?? ''));
+
+        if ($url === '/') {
+            return [
+                'status' => 'error',
+                'message' => 'Не указан URL.',
+            ];
+        }
+
+        if ($type === '') {
+            $type = SeoTemplateRenderer::detectTypeFromUrl($url);
+        }
+
+        $existing = self::getPageByUrl($url);
+        $query = (string) ($row['query'] ?? '');
+        $h1 = (string) ($row['h1'] ?? '');
+        $title = (string) ($row['title'] ?? '');
+
+        $postData = [
+            'post_type' => self::POST_TYPE,
+            'post_status' => 'publish',
+            'post_title' => sanitize_text_field($query !== '' ? $query : ($h1 !== '' ? $h1 : ($title !== '' ? $title : $url))),
+            'post_name' => self::slugForUrl($url),
+        ];
+
+        if ($existing instanceof WP_Post) {
+            $postData['ID'] = $existing->ID;
+            $postId = wp_update_post(wp_slash($postData), true);
+            $created = false;
+        } else {
+            $postId = wp_insert_post(wp_slash($postData), true);
+            $created = true;
+        }
+
+        if (is_wp_error($postId)) {
+            return [
+                'status' => 'error',
+                'message' => $postId->get_error_message(),
+            ];
+        }
+
+        $variables = SeoTemplateRenderer::inferVariables($type, $url);
+
+        $meta = [
+            self::META_TYPE => $type,
+            self::META_QUERY => sanitize_text_field((string) ($row['query'] ?? '')),
+            self::META_URL => $url,
+            self::META_URL_NORMALIZED => $url,
+            self::META_TITLE => sanitize_text_field((string) ($row['title'] ?? '')),
+            self::META_DESCRIPTION => sanitize_text_field((string) ($row['description'] ?? '')),
+            self::META_H1 => sanitize_text_field((string) ($row['h1'] ?? '')),
+            self::META_H2 => sanitize_text_field((string) ($row['h2'] ?? '')),
+            self::META_H2_BOTTOM => sanitize_text_field((string) ($row['h2_bottom'] ?? '')),
+            self::META_TEXT => wp_kses_post((string) ($row['seo_text'] ?? '')),
+            self::META_CURRENCY_CODE => strtolower((string) ($variables['currency_code'] ?? '')),
+            self::META_CURRENCY_SLUG => (string) ($variables['currency_slug'] ?? ''),
+            self::META_CITY_SLUG => (string) ($variables['city_slug'] ?? ''),
+            self::META_AMOUNT => (int) ($variables['amount'] ?? 0),
+            self::META_BANK_SLUG => (string) ($variables['bank_slug'] ?? ''),
+            self::META_BANK_CODE => (string) ($variables['bank_code'] ?? ''),
+            self::META_IMPORT_BATCH => $batchId,
+        ];
+
+        foreach ($meta as $key => $value) {
+            update_post_meta((int) $postId, $key, $value);
+        }
+
+        return [
+            'status' => $created ? 'created' : 'updated',
+            'post_id' => (int) $postId,
+            'url' => $url,
+        ];
+    }
 }

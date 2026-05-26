@@ -328,11 +328,6 @@ p {
   margin-inline: auto;
 }
 
-@media (max-width: 480px) {
-  .container {
-    padding-inline: var(--container-padding-sm);
-  }
-}
 .header {
   position: sticky;
   top: 0;
@@ -660,6 +655,12 @@ body.is-header-menu-open {
   }
   .header__burger {
     display: flex;
+  }
+}
+@media (max-width: 568px) {
+  .btn-cities.header__city {
+    min-width: calc(139 / 16 * 1rem);
+    max-width: calc(139 / 16 * 1rem);
   }
 }
 @media (max-width: 359px) {
@@ -1435,21 +1436,24 @@ body.is-header-menu-open {
     justify-content: center;
   }
   .converter .tabs__item {
-    font-size: calc(15 / 16 * 1rem);
+    font-size: calc(13 / 16 * 1rem);
   }
   .converter .tabs__item.active {
-    font-size: calc(15 / 16 * 1rem);
+    font-size: calc(13 / 16 * 1rem);
   }
   .converter .currency-swap-button {
-    margin-inline: calc(10 / 16 * 1rem);
+    margin-inline: calc(6 / 16 * 1rem);
   }
   .converter .currency-amount-group {
-    width: calc(210 / 16 * 1rem);
+    width: calc(194 / 16 * 1rem);
     height: calc(46 / 16 * 1rem);
   }
   .converter .currency-amount-group .currency-amount-group__input {
-    flex: 0 1 calc(116 / 16 * 1rem);
-    max-width: calc(116 / 16 * 1rem);
+    flex: 0 1 calc(96 / 16 * 1rem);
+    max-width: calc(96 / 16 * 1rem);
+  }
+  .converter .currency-amount-group__select {
+    max-width: calc(96 / 16 * 1rem);
   }
   .converter .currency-select--layout-standalone {
     width: calc(94 / 16 * 1rem);
